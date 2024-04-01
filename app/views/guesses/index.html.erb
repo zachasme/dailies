@@ -1,0 +1,25 @@
+<ol>
+  <% @guesses.each do |guess| %>
+    <li>
+      <%= render guess.letters %>
+    </li>
+  <% end %>
+</ol>
+
+<% if @guess.errors.any? %>
+  <h2>Errors:</h2>
+  <ul>    
+      <% @guess.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %> 
+  </ul>
+<% end %>
+
+<%= form_with model: @guess do |form| %>
+  <%= form.text_field :word %>
+  <%= form.submit %>
+<% end %>
+
+<% @letters.each do |letter| %>
+  <%= letter %>
+<% end %>

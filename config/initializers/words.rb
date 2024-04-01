@@ -1,0 +1,1 @@
+::ALLOWED_WORDS = File.readlines("tmp/storage/words.txt", chomp: true).map(&:upcase)
